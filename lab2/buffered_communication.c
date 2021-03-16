@@ -42,7 +42,7 @@ int main(int argc, char *argv[]) {
     int rank;
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
 
-    MPI_Buffer_attach(malloc(MAX_MESSAGE_SIZE*2), MAX_MESSAGE_SIZE*2);
+    MPI_Buffer_attach(malloc(MAX_MESSAGE_SIZE), MAX_MESSAGE_SIZE);
     test_buffered(rank);
 
     MPI_Finalize();
