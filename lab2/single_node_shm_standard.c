@@ -1,4 +1,4 @@
-#include "parameters.h"
+#include "definitions.h"
 
 double sender(int msg_size) {
     char *buff = malloc(msg_size);
