@@ -5,7 +5,7 @@ double sender(int size) {
     char *buff = malloc(size);
     int i;
     double start = MPI_Wtime();
-    for (i = 0; i < N; i++) {
+    for (i = 0; i < TEST_ATTEMPTS; i++) {
         MPI_Send(buff, size, MPI_BYTE, RECEIVER, 0, MPI_COMM_WORLD);
         MPI_Recv(buff, size, MPI_BYTE, RECEIVER, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
     }
@@ -23,7 +23,7 @@ void receive(int size) {
 
 void perform_tests(int rank){
     int message_size;
-    for(message_size = MIN_MESSAGE_SIZE, message_size <= MAX_MESSAGE_SIZE, message_size *= MESSAGE_SIZE_INCREMENT_FACTOR){
+    for(message_size = MIN_MESSAGE_SIZE; message_size <= MAX_MESSAGE_SIZE; message_size *= MESSAGE_SIZE_INCREMENT_FACTOR){
         if(rank == SENDER){
             double test_time = send(message_size);
             printf("%f", test_time);
