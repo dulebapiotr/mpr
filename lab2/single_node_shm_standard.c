@@ -25,18 +25,10 @@ void test(int rank) {
     int msg_size;
     for (msg_size = 1; msg_size <= MAX_MESSAGE_SIZE; msg_size *= 2) {
         if (rank == SENDER) {
-<<<<<<< HEAD
-            double time = sender(size);
-            printf("%.5f  ", N);
-            printf("%.5f  ", size);
-            printf("%.5f  ", time);
-            printf("%.5f  ", N*size/time/1000000*2);
-=======
             double time = sender(msg_size);
             printf("%d  ", N);
             printf("%d  ", msg_size);
-            printf("%d  ", time);
->>>>>>> de0d752bb6989bc151dae99f5ee8bd7a52cbadaf
+            printf("%f  ", time);
         } else if (rank == RECEIVER) {
             receiver(msg_size);
         }
