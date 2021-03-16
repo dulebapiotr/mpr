@@ -27,7 +27,7 @@ void test_buffered(int rank) {
         if (rank == SENDER) {
             double time = sender_buffered(size);
 //            printf("%f\n", time/N);
-            printf("%f\n", size/(time*N));
+            printf("%f\n", 2*N*size/time/1000);
         } else if (rank == RECEIVER) {
             receiver_buffered(size);
         }
