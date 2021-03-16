@@ -23,10 +23,11 @@ void receiver_buffered(int size) {
 
 void test_buffered(int rank) {
     int size;
-    for (size = 1; size <= MAX_MESSAGE_SIZE; size += 500) {
+    for (size = 1; size <= MAX_MESSAGE_SIZE; size *=2) {
         if (rank == SENDER) {
             double time = sender_buffered(size);
-            printf("%f\n", time/N);
+//            printf("%f\n", time/N);
+            printf("%f\n", size/(time*N);
         } else if (rank == RECEIVER) {
             receiver_buffered(size);
         }
