@@ -28,7 +28,7 @@ void test(int rank) {
             double time = sender(msg_size);
             printf("%d  ", N);
             printf("%d  ", msg_size);
-            printf("%f  ", time);
+            printf("%f  \n", time);
         } else if (rank == RECEIVER) {
             receiver(msg_size);
         }
