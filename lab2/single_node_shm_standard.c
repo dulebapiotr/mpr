@@ -15,7 +15,7 @@ double sender(int size) {
 void receive(int size) {
     char *buff = malloc(size);
     int i;
-    for (i = 0; i < N; i++) {
+    for (i = 0; i <TEST_ATTEMPTS; i++) {
         MPI_Recv(buff, size, MPI_BYTE, SENDER, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
         MPI_Send(buff, size, MPI_BYTE, SENDER, 0, MPI_COMM_WORLD);
     }
