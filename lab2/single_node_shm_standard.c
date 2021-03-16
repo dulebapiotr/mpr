@@ -5,8 +5,8 @@ double sender(int msg_size) {
     int i;
     double start = MPI_Wtime();
     for (i = 0; i < N; i++) {
-        MPI_Send(buff, size, MPI_BYTE, RECEIVER, 0, MPI_COMM_WORLD);
-        MPI_Recv(buff, size, MPI_BYTE, RECEIVER, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+        MPI_Send(buff, msg_size, MPI_BYTE, RECEIVER, 0, MPI_COMM_WORLD);
+        MPI_Recv(buff, msg_size, MPI_BYTE, RECEIVER, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
     }
     return MPI_Wtime() - start;
 }
@@ -15,15 +15,15 @@ void receiver(int msg_size) {
     char *buff = malloc(msg_size);
     int i;
     for (i = 0; i < N; i++) {
-        MPI_Recv(buff, size, MPI_BYTE, SENDER, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
-        MPI_Send(buff, size, MPI_BYTE, SENDER, 0, MPI_COMM_WORLD);
+        MPI_Recv(buff, msg_size, MPI_BYTE, SENDER, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+        MPI_Send(buff, msg_size, MPI_BYTE, SENDER, 0, MPI_COMM_WORLD);
     }
 }
 
 void test(int rank) {
     printf("N  msg_size  time \n");
     int msg_size;
-    for (msg_size = 1; msg_size <= MAX__MESSAGE_SIZE; msg_size *= 2) {
+    for (msg_size = 1; msg_size <= MAX_MESSAGE_SIZE; msg_size *= 2) {
         if (rank == SENDER) {
 <<<<<<< HEAD
             double time = sender(size);
