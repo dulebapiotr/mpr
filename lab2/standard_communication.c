@@ -23,7 +23,7 @@ void receiver(int msg_size) {
 void test(int rank) {
     printf("N  msg_size  time \n");
     int msg_size;
-    for (msg_size = 1; msg_size <= MAX_MESSAGE_SIZE; msg_size += 100) {
+    for (msg_size = 1; msg_size <= MAX_MESSAGE_SIZE; msg_size += 500) {
         if (rank == SENDER) {
             double time = sender(msg_size);
             printf("%d  ", N);
