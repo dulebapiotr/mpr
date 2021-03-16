@@ -1,4 +1,4 @@
-#include "definitions.h"
+#include "parameters.h"
 
 double sender(int size) {
     char *buff = malloc(size);
@@ -25,7 +25,10 @@ void test(int rank) {
     for (size = 1; size <= MAX_SIZE; size *= 2) {
         if (rank == SENDER) {
             double time = sender(size);
-            printf("%.5f\n", N*size/time/1000000*2);
+            printf("%.5f  ", N);
+            printf("%.5f  ", size);
+            printf("%.5f  ", time);
+            printf("%.5f  ", N*size/time/1000000*2);
         } else if (rank == RECEIVER) {
             receiver(size);
         }
