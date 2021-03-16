@@ -7,7 +7,7 @@
 
 #define SENDER 1
 #define RECEIVER 0
-#define N 1000
+#define N 2000
 #define MAX_MESSAGE_SIZE 500000
 
 //MPIR_CVAR_CH3_NOLOCAL = 1;
