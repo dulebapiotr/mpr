@@ -24,5 +24,5 @@ unsigned long long get_points(unsigned long long n) {
 int main(int argc, char *argv[]) {
     unsigned long long n = strtoull(argv[1], NULL, 0);
     srand(time(NULL));
-    printf("n = %llu, π = %'.10Lf\n", n, (long double) get_points(n)/n);
+    printf("n = %llu, π = %'.10Lf\n", n, (long double) 4*get_points(n)/n);
 }
