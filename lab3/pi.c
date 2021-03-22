@@ -20,6 +20,7 @@ unsigned long long get_points(unsigned long long n) {
     return in;
 }
 
+
 int main(int argc, char *argv[]) {
     unsigned long long n = strtoull(argv[1], NULL, 0);
     srand(time(NULL));
