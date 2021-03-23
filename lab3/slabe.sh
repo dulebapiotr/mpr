@@ -1,0 +1,12 @@
+mpiexec -machinefile ./allnodes -np 12 ./mpi_pi_c 12000000000
+mpiexec -machinefile ./allnodes -np 11 ./mpi_pi_c 11000000000
+mpiexec -machinefile ./allnodes -np 10 ./mpi_pi_c 10000000000
+mpiexec -machinefile ./allnodes -np 9 ./mpi_pi_c 9000000000
+mpiexec -machinefile ./allnodes -np 8 ./mpi_pi_c 8000000000
+mpiexec -machinefile ./allnodes -np 7 ./mpi_pi_c 7000000000
+mpiexec -machinefile ./allnodes -np 6 ./mpi_pi_c 6000000000
+mpiexec -machinefile ./allnodes -np 5 ./mpi_pi_c 5000000000
+mpiexec -machinefile ./allnodes -np 4 ./mpi_pi_c 4000000000
+mpiexec -machinefile ./allnodes -np 3 ./mpi_pi_c 3000000000
+mpiexec -machinefile ./allnodes -np 2 ./mpi_pi_c 2000000000
+mpiexec -machinefile ./allnodes -np 1 ./mpi_pi_c 1000000000
