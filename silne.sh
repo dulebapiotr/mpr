@@ -1,4 +1,5 @@
 
+
 mpiexec -machinefile ./allnodes -np 12 -ppn 1 ./mpi_pi_c 10000000
 mpiexec -machinefile ./allnodes -np 11 -ppn 1 ./mpi_pi_c 10000000
 mpiexec -machinefile ./allnodes -np 10 -ppn 1 ./mpi_pi_c 10000000
