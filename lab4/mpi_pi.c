@@ -18,7 +18,7 @@ double rand_double() {
 
 unsigned long long montecarlo(unsigned long begin, unsigned long long end) {
     register unsigned long long i, count = 0;
-    register double a, b;
+    register double x, y;
     for (i = begin; i < end; i++) {
         x = rand_double();
         y = rand_double();
