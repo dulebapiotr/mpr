@@ -1,5 +1,5 @@
 ZEUS = $(shell seq 1 12)
-TIMES = $(shell seq 1 30) 
+TIMES = $(shell seq 1 1) 
 
 build:
 	mpicc -o mpi_pi.x mpi_pi.c

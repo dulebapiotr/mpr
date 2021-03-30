@@ -12,10 +12,10 @@ make build
 
 chmod 777 *
 
-make strong n=100000000000
-make strong n=10000000
-make strong n=10000000
+make strong n=20000000000
+make strong n=550000000
+make strong n=15000000
 
-make weak n=100000000000
-make weak n=10000000
-make weak n=1000000
+make weak n=20000000000
+make weak n=550000000
+make weak n=1500000
