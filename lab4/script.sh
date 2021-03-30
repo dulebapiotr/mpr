@@ -10,7 +10,7 @@ module add plgrid/tools/openmpi
 
 make build
 
-chmod 777 mpi_pi.x
+chmod 777 *
 
 make strong n=20000000000
 make strong n=550000000
