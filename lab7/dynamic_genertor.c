@@ -13,13 +13,11 @@ void main(int argc, char *argv[]) {
     unsigned long long i;
 
     double start = omp_get_wtime();
-    #pragma omp for schedule(static, chunk)
+    #pragma omp for schedule(dynamic, chunk)
     for(i=0; i<size; i++){
         rand_array[i] = rand();
     }
     double stop = omp_get_wtime();
-    printf("Time: %lf\n", stop - start);
-    printf("Size: %d\n", size);
-    printf("Chunk: %d\n", chunk);
+    printf("%lf\n", stop - start);
 
 }
