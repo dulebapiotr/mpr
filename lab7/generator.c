@@ -10,7 +10,7 @@ void main(int argc, char *argv[]) {
     int chunk = atoi(argv[2]);
 
     int rand_array[size];
-    int i;
+    unsigned long long i;
 
     double start = omp_get_wtime();
     #pragma omp for schedule(static, chunk)
